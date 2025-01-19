@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  $notification = $_SESSION['notification'] ?? null;
+  if ($notification) {
+    unset($_SESSION['notification']);
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,3 +37,4 @@
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
+
