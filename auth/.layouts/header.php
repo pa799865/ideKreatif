@@ -4,6 +4,14 @@
   if ($notification) {
     unset($_SESSION['notification']);
   }
+  if (isset($_SESSION['username']) || isset($_SESSION['role'])) {
+    $_SESSION['notification'] = [
+      'type' => 'danger',
+      'message' => 'Silahkan Logout Terlebih Dahulu!'
+    ];
+    header('Location: index.php');
+  }
+
 ?>
 
 <!DOCTYPE html>
